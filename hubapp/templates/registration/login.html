@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 {% block title %} SignIn  {% endblock %}
 
 
 {% block content %}
 
 <form action="" method="POST">
-  {{ form }}
+  {{ form| crispy}}
+  <button input="submit" class="btn btn-info">Login</button>
 </form>
 
 {% endblock %}

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 
@@ -8,3 +9,9 @@ from django.http import HttpResponse
   """
 def index(request):
   return render(request, 'add/index.html')
+
+
+
+def register(request):
+  context = {}
+  return render(request,'/registration/register.html',context)
