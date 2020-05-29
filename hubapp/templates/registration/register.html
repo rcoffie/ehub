@@ -1,1 +1,24 @@
-{% extends ('base.html')%}
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Registration  {% endblock %}
+
+
+{% block content %}
+
+
+  <div class="col-md-8">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1>Register </h1>
+        <form action="" method="POST" autocomplete="off">
+          {{ form| crispy}}
+          <button input="submit" class="btn btn-info">Login</button>
+        </form>
+        <p>Sign here if you have an Accounts <button type="button" class="btn btn-link">Link</button> </p>
+      </div>
+    </div>
+  </div>
+
+
+
+{% endblock %}
