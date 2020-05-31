@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title%} {% endblock %}
+
+{% block content %}
+
+<p>this is the add page</p>
+
+<div class="col-md-2">
+
+</div>
+
+<div class="col-md-8">
+  {% for add in adds %}
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{{ add.image.url}}" class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ add.title }}</h5>
+          <p class="card-text">{{ add.description }}</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
+from .models import *
 
 # Create your views here.
 
@@ -21,3 +22,10 @@ def register(request):
       return redirect('/')
   context = {'form':form,}
   return render(request,'registration/register.html',context)
+
+
+
+def adds(request):
+  adds = Add.objects.all()
+  context = {'adds':adds}
+  return render(request,'add/adds.html',context)
