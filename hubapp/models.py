@@ -22,6 +22,7 @@ class Add(models.Model):
   brand = models.CharField(max_length=50)
   description = models.TextField()
   negotiable  = models.BooleanField(default=False)
+  image = models.ImageField(null=True)
 
   
   
