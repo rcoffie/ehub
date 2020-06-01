@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 from .models import *
+from .forms import *
 
 # Create your views here.
 
@@ -29,3 +30,10 @@ def adds(request):
   adds = Add.objects.all()
   context = {'adds':adds}
   return render(request,'add/adds.html',context)
+
+
+
+def postAdd(request):
+  form = AddForm()
+  context = {'form':form}
+  return render(request,'add/post.html',context)

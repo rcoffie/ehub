@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} PostAdd {% endblock %}
+
+{% block content %}
+
+<div class="col-md-10">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1>Post Add</h1>      
+     <form action="" method="POST" autocomplete="off">
+       {{ form|crispy }}
+     </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
