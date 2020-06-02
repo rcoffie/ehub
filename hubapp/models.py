@@ -1,6 +1,8 @@
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User
+import datetime 
+from django.utils import timezone
 
 
 # Create your models here.
@@ -33,6 +35,7 @@ class Add(models.Model):
   image_3 = models.ImageField(null=True,blank=True)
   image_4 = models.ImageField(null=True,blank=True)
   aproval = models.BooleanField(default=False)
+  time   = timezone.now().day
   user = models.OneToOneField(User, on_delete=models.CASCADE,null=True,default=User.id)
   
   
