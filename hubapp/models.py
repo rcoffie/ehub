@@ -2,7 +2,7 @@ from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User
 import datetime 
-from django.utils import timezone
+
 
 
 # Create your models here.
@@ -27,15 +27,14 @@ class Add(models.Model):
   category = models.CharField(max_length=200, null=True,choices=Category)
   condition = models.CharField(max_length=200, null=True,choices=Condition)
   description = models.TextField()
-  negotiable  = models.BooleanField(default=False)
+  negotiable  = models.BooleanField(default=False,null=True)
   default_image = models.ImageField(null=True)
   image_1 = models.ImageField(null=True)
   image_2 = models.ImageField(null=True)
   image_3 = models.ImageField(null=True,blank=True)
   image_4 = models.ImageField(null=True,blank=True)
-  aproval = models.BooleanField(default=False)
-  time   = timezone.now().day
-  user = models.OneToOneField(User, on_delete=models.CASCADE,null=True,default=User.id)
+  aproval = models.BooleanField(default=False,null=True)
+  user = models.ForeignKey(User, on_delete=models.CASCADE,default=User.id)
   
   
   def __str__(self):
