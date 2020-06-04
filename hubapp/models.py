@@ -23,7 +23,6 @@ class Add(models.Model):
   )
   title = models.CharField(max_length=150)
   price = models.DecimalField(max_digits=6,decimal_places=2)
-  brand = models.CharField(max_length=50)
   location = models.CharField(max_length=200, null=True,choices=location)
   category = models.CharField(max_length=200, null=True,choices=Category)
   condition = models.CharField(max_length=200, null=True,choices=Condition)

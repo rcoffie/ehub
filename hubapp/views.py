@@ -35,5 +35,10 @@ def adds(request):
 
 def postAdd(request):
   form = AddForm()
+  if request.method == 'POST':
+    form = AddForm(request.POST)
+    if form.is_valid():
+      form.save()
+      return redirect('add')
   context = {'form':form}
   return render(request,'add/post.html',context)
