@@ -5,7 +5,7 @@ from .models import *
 
 class AddForm(ModelForm):
      class Meta:
-         model = Add
+         model = Ad
          exclude = ['user','aproval']
          #fields = '__all__'
        

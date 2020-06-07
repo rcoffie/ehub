@@ -27,7 +27,7 @@ def register(request):
 
 
 def adds(request):
-  adds = Add.objects.all()
+  adds = Ad.objects.all()
   context = {'adds':adds}
   return render(request,'add/adds.html',context)
 
